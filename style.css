@@ -1,0 +1,85 @@
+body{
+   background-color: #E6E7E8;
+   font-family:Arial, Helvetica, sans-serif;
+}
+.container{
+   width:1000px;
+   margin:auto;
+   transition: 0.5s;
+
+}
+.container h1{
+   color:  #354649;
+}
+
+.container header{
+   display: grid;
+   grid-template-columns: 1fr 50px;
+   margin-top:50px
+}
+.container header .shopping{
+   position: relative;
+   text-align: right;
+}
+.shopping i{
+   font-size: 3rem;
+   color: #354649;
+   cursor: pointer;
+   transition: all 0.25s ease;
+
+}
+.shopping i:hover{
+   color: #6C7A89;
+}
+.shopping span{
+   background:#A3C6C4;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   position: absolute;
+   top: -5px;
+   left: 80%;
+   padding: 3px 10px ;
+
+
+}
+.container .list{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+   margin-top: 50px;
+
+}
+.cart{
+   position: fixed;
+   top: 0;
+   left: 100%;
+   width: 500px;
+   background-color: #E0E7E9;
+   border-left: 1px solid #354649;
+   height: 100vh;
+   transition: 0.5s;
+
+
+}
+.active .card{
+   left:calc(100%-500px);
+}
+.active .container{
+   transform: translate(-200px);
+}
+
+.cart{
+   color: #354649;
+   font-weight: 300;
+   margin: 0;
+   padding: 0 20px;
+   height: 80px;
+   display: flex;
+   align-items: center;
+}
+.cart .checkOut{
+   position:absolute;
+}
