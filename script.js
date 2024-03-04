@@ -1,20 +1,23 @@
+// define the variables
 const openShopping = document.querySelector(".shopping"),
       closeShopping = document.querySelector(".closeShopping"),
       body = document.querySelector("body"),
       list= document.querySelector(".list"),
-      listCard = document.querySelector(".listCard"),
+      listCart = document.querySelector(".listCart"),
       total = document.querySelector(".total"),
       quantity = document.querySelector(".quantity")
 
-
+//add Event listeners to closeShopping and openshopping
 openShopping.addEventListener("click", () => {
     body.classList.add("active");
 })
+
 
 closeShopping.addEventListener("click", () => {
     body.classList.remove("active")
 })
 
+//create and animate the product information and images
 let products = [
     {
         "id": 1,
@@ -54,9 +57,10 @@ let products = [
     }
 ]
 
+//create empty array called "listCarts"
+let listCarts = [];
 
-let listCards = [];
-
+//create function called initApp and loop elemnts of the products
 const initApp = () => {
     products.forEach((value, key) => {
         let newDiv = document.createElement("div");
@@ -65,32 +69,35 @@ const initApp = () => {
             <img src = "img/${value.image}">
             <div class = "title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick = "addToCard(${key})">Add To Card</button>
+            <button onclick = "addToCart(${key})">Add To Cart</button>
         `;
+
+        //add to list via appendChild
         list.appendChild(newDiv)
     })
 }
 
+//call the function initApp
 initApp()
 
-
-const addToCard = key => {
-    if(listCards[key] == null) {
-        listCards[key] = JSON.parse(JSON.stringify(products[key]));
-        // console.log(listCards);
-        listCards[key].quantity = 1;
-        // console.log(listCards[key].quantity);
+//create function called add to cart
+const addToCart = key => {
+    if(listCarts[key] == null) {
+        listCarts[key] = JSON.parse(JSON.stringify(products[key]));
+       
+        listCarts[key].quantity = 1;
+       
     }
 
-    reloadCard()
+    reloadCart()
 }
 
-const reloadCard = () => {
-    listCard.innerHTML = "";
+const reloadCart = () => {
+    listCart.innerHTML = "";
     let count = 0;
     let totalPrice= 0;
 
-    listCards.forEach((value, key) => {
+    listCarts.forEach((value, key) => {
         totalPrice = totalPrice + value.price
         count = count + value.quantity;
 
@@ -98,16 +105,16 @@ const reloadCard = () => {
             let newDiv = document.createElement("li");
             newDiv.innerHTML = `
                 <div><img src = "img/${value.image}"></div>
-                <div class = "cardTitle">${value.name}</div>
-                <div class = "cardPrice">${value.price.toLocaleString()}</div>
+                <div class = "cartTitle">${value.name}</div>
+                <div class = "cartPrice">${value.price.toLocaleString()}</div>
 
                 <div>
-                    <button style = "background-color: #354649;" class = "cardButton" onclick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <button style = "background-color: #354649;" class = "cartButton" onclick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class = "count">${value.quantity}</div>
-                    <button style = "background-color: #354649;" class = "cardButton" onclick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                    <button style = "background-color: #354649;" class = "cartButton" onclick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
                 </div>
             `
-            listCard.appendChild(newDiv)
+            listCart.appendChild(newDiv)
         }
 
         total.innerText = totalPrice.toLocaleString();
@@ -118,11 +125,11 @@ const reloadCard = () => {
 
 const changeQuantity = (key, quantity) => {
     if(quantity == 0) {
-        delete listCards[key]
+        delete listCarts[key]
     }
     else {
-        listCards[key].quantity = quantity;
-        listCards[key].price = quantity * products[key].price
+        listCarts[key].quantity = quantity;
+        listCarts[key].price = quantity * products[key].price
     }
-    reloadCard()
+    reloadCart()
 }
