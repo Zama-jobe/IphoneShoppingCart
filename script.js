@@ -21,39 +21,39 @@ closeShopping.addEventListener("click", () => {
 let products = [
     {
         "id": 1,
-        "name": "PRODUCT 1",
+        "name": "IPHONE 15 125GB-YELLOW",
         "image":"1.png",
         "price": 15000
     },
     {
         "id": 2,
-        "name": "PRODUCT 2",
+        "name": "IPHONE 15 256GB-PINK",
         "image":"2.png",
         "price": 19000
     },
     {
         "id": 3,
-        "name": "PRODUCT 3",
+        "name": "IPHONE 15 125GB-BLACK",
         "image":"3.png",
         "price": 15000
     },
     {
         "id": 4,
-        "name": "PRODUCT 4",
+        "name": "IPHONE 15 125GB-GREEN",
         "image":"4.png",
         "price": 15000
     },
     {
         "id": 5,
-        "name": "PRODUCT 5",
+        "name": "IPHONE 15 256GB-BLUE",
         "image":"5.png",
-        "price": 15000
+        "price": 19000
     },
     {
         "id": 6,
-        "name": "PRODUCT 6",
+        "name": "AirPods",
         "image":"6.png",
-        "price": 15000
+        "price": 7000
     }
 ]
 
