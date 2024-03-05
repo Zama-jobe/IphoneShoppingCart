@@ -22,37 +22,37 @@ let products = [
     {
         id: 1,
         name: "PRODUCT 1",
-        images: "img/1.PNG",
+        images: "1.PNG",
         price: 15000
     },
     {
         id: 2,
         name: "PRODUCT 2",
-        images: "img/2.PNG",
+        images: "2.PNG",
         price: 19000
     },
     {
         id: 3,
         name: "PRODUCT 3",
-        images: "img/3.PNG",
+        images: "3.PNG",
         price: 15000
     },
     {
         id: 4,
         name: "PRODUCT 4",
-        images: "img/4.PNG",
+        images: "4.PNG",
         price: 15000
     },
     {
         id: 5,
         name: "PRODUCT 5",
-        images: "img/5.PNG",
+        images: "5.PNG",
         price: 15000
     },
     {
         id: 6,
         name: "PRODUCT 6",
-        images: "img/1.PNG",
+        images: "6.PNG",
         price: 15000
     }
 ]
