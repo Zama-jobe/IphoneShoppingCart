@@ -22,7 +22,7 @@ let products = [
     {
         id: 1,
         name: "PRODUCT 1",
-        images: "1.PNG",
+        images: "img/1.PNG",
         price: 15000
     },
     {
