@@ -90,6 +90,17 @@ const addToCart = key => {
     reloadCart()
 }
 
+const changeQuantity = (key, newQuantity) => {
+    if (listCarts[key]) {
+        listCarts[key].quantity = newQuantity;
+        if (listCarts[key].quantity <= 0) {
+            delete listCarts[key]; // Remove item if quantity is zero or negative
+        }
+    }
+    reloadCart();
+}
+
+
 
 const reloadCart = () => {
     listCart.innerHTML = "";
@@ -107,10 +118,10 @@ const reloadCart = () => {
             <div class="cartTitle">${value.name}</div>
             <div class="cartPrice">${value.price.toLocaleString()}</div>
 
-            <div>
-                <button style="background-color: #354649;" class="cartButton" onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                <div class="count">${value.quantity}</div>
-                <button style="background-color: #354649;" class="cartButton" onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+            <div style="display: flex; align-items: center;">
+        <button style="background-color: #354649;" class="cartButton" onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+            <div class="count">${value.quantity}</div>
+            <button style="background-color: #354649;" class="cartButton" onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
             </div>
         `;
         listCart.appendChild(newDiv);
@@ -119,3 +130,5 @@ const reloadCart = () => {
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
+
+
