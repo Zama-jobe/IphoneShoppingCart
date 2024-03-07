@@ -103,7 +103,7 @@ const reloadCart = () => {
 
         let newDiv = document.createElement("li");
         newDiv.innerHTML = `
-            <div><img src="img/${value.image}"></div>
+            <div><img src="img/${value.images}"></div>
             <div class="cartTitle">${value.name}</div>
             <div class="cartPrice">${value.price.toLocaleString()}</div>
 
@@ -119,5 +119,3 @@ const reloadCart = () => {
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
-
-
