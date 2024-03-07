@@ -21,37 +21,37 @@ let products = [
     {
         id: 1,
         name: "IPHONE 15 125GB-YELLOW",
-        images: "img/1.png",
+        images: "1.png",
         price: 15000
     },
     {
         id: 2,
         name: "IPHONE 15 256GB-PINK",
-        images: "img/2.png",
+        images: "2.png",
         price: 19000
     },
     {
         id: 3,
         name: "IPHONE 15 125GB-BLACK",
-        images: "img/3.png",
+        images: "3.png",
         price: 15000
     },
     {
         id: 4,
         name: "IPHONE 15 125GB-GREEN",
-        images: "img/4.png",
+        images: "4.png",
         price: 15000
     },
     {
         id: 5,
         name: "IPHONE 15 256GB-BLUE",
-        images: "img/5.png",
+        images: "5.png",
         price: 15000
     },
     {
         id: 6,
         name: "AirPods",
-        images: "img/6.png",
+        images: "6.png",
         price: 15000
     }
 ];
