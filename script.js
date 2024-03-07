@@ -109,7 +109,7 @@ const reloadCart = () => {
 
     for (let key in listCarts) {
         let value = listCarts[key];
-        totalPrice += value.price;
+        totalPrice += value.price * value.quantity;
         count += value.quantity;
 
         let newDiv = document.createElement("li");
